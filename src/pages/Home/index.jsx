@@ -20,12 +20,12 @@ function Home() {
             setFilmes(response.data.results.slice(0, 10))
             setTimeout(() => {
                 setLoading(false)
-            }, "500")
+            }, 800)
         }
         loadFilmes();
     }, [])
 
-    if (loading) {
+    if(loading) {
         return (
             <div className='loading'>
                 <h2>Carregando filmes ...</h2>
@@ -34,7 +34,6 @@ function Home() {
     }
 
     return (
-
         <div className='container'>
             <div className='lista-filmes'>
                 {filmes.map((filme) => {
@@ -50,5 +49,4 @@ function Home() {
         </div>
     )
 }
-
 export default Home;
